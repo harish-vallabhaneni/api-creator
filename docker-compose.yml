@@ -1,0 +1,12 @@
+version: "2"
+services:
+  mongoapicreator:
+    image: mongo
+    command: mongod --smallfiles
+  apicreator:
+    build: .
+    ports:
+      - "9099:3000"
+    links:
+      - mongoapicreator
+

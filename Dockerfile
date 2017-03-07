@@ -1,0 +1,19 @@
+FROM node:latest
+
+MAINTAINER <vallabhaneni.venkata@gmail.com>
+
+RUN npm update
+
+RUN mkdir -p /usr/src/app
+
+WORKDIR /usr/src/app
+
+COPY . /usr/src/app
+
+RUN npm install
+
+EXPOSE 3000
+
+ENTRYPOINT ["node","server.js"]
+
+
